@@ -1,1 +1,5 @@
-new
+*.exe
+.vs/
+.vscode/
+new/
+New folder/

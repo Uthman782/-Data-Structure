@@ -6,9 +6,9 @@ class array{
 		int used_size;
 		int* ptr;
 	public:
-		array(int ts, int us=0):total_size(ts),used_size(us){
-			ptr = new int[ts];
-			
+		array(int ts, int us=0):total_size(ts),used_size(us){	
+			this->used_size=0;
+			this->ptr=new int[ts];
 		}
 		// inserting function.. .
 		bool insert(int number,int index=0){
