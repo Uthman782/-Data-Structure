@@ -7,15 +7,14 @@ class array{
 		int* ptr;
 	public:
 		array(int ts, int us=0):total_size(ts),used_size(us){	
-			this->used_size=0;
+//			this->used_size=0;
 			this->ptr=new int[ts];
 		}
 		// inserting function.. .
 		bool insert(int number,int index=0){
 			if(index<=this->used_size and this->used_size<this->total_size){
-				for(int i=used_size; i>=index;i--){
+				for(int i=used_size; i>=index;i--)
 					ptr[i+1]=ptr[i];
-				}
 				ptr[index]=number;
 				used_size++;
 				return (true);
@@ -24,11 +23,10 @@ class array{
 		}
 		// deleting function.. .
 		bool delet(int index){
-			if(index<=this->used_size){
+			if(this->used_size>0 and index<=this->used_size){
 				ptr[index]=0;
-				for(int i=index; i<used_size;i++){
+				for(int i=index; i<used_size;i++)
 					ptr[i]=ptr[i+1];
-				}
 				used_size--;
 				return (true);
 				}

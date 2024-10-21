@@ -8,7 +8,6 @@ class array{
 	public:
 		array(int ts, int us=0):total_size(ts),used_size(us){
 			ptr = new int[ts];
-			
 		}
 		bool insert(int number,int index,bool order=false){
 			if(index<total_size){
