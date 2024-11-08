@@ -10,21 +10,24 @@ class Queue {
 			this->ts = s;
 			this->arr = new int[this->ts]; /* queue */
 		}
+		int rer(){return rear;}
+		int fron(){return front;}
 		bool isFull(){
 			if(this->front==0 and this->rear==this->ts-1)
 				return(true);
+			else if(this->rear==this->ts-1){
+				return(true);
+			}
 			return false;
 		}
 		bool isEmpty(){
-			if(this->front == -1 or this->front == this->rear)
+			if(this->front == -1 or this->front > this->rear)
 				return true;
 			return false;
 		}
+
 		void insert(int value) {
-			if(this->front==0 and this->rear==this->ts-1) {
-				cout << "Queue overflow... ." << endl;
-				return;
-			} else if (this->rear == this->ts - 1) {
+			if(this->isFull()) {
 				cout << "Queue overflow... ." << endl;
 				return;
 			}
@@ -33,7 +36,7 @@ class Queue {
 			cout << value << " inserted into queue" << endl;
 		}
 		int delet() {
-			if (this->front == -1 or this->front > this->rear) {
+			if (this->isEmpty()) {
 				cout << "Queue is empty!" << endl;
 				return (-1);
 			}
@@ -56,6 +59,20 @@ class Queue {
 };
 
 int main() {
-	cout<<"Hello";
+	Queue q(3);
+//	q.display();
+	q.insert(1);
+	q.insert(1);
+	q.insert(1);
+//	q.display();
+	q.delet();
+	q.delet();
+	q.delet();
+	q.insert(1);
+	q.insert(1);
+	q.insert(1);
+	q.insert(1);
+	cout<<"Rear-> "<<q.rer()<<" and front-> "<<q.fron()<<endl;
+	q.display();
 	return 0;
 }
