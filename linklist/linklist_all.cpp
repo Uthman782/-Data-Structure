@@ -172,8 +172,7 @@ int main() {
 
     cout << "Search for 10: " << (list.search(10) ? "Found" : "Not Found") << endl;
 
-    list.deleteAtPosition(2);
-    list.display(); // Output: 3 -> 5 -> 15 -> nullptr
+    list.deleteAtPosition(2);    list.display(); // Output: 3 -> 5 -> 15 -> nullptr
 
     list.clear();
     list.display(); // Output: List is empty.
@@ -183,8 +182,6 @@ int main() {
 
 /*
 Certainly! I'll explain the `LinkedList` class and its methods:
-
-**File: c:\Users\UTHMAN\Desktop\DS\linklist\linklist_all.cpp**
 
 This class implements a singly linked list data structure. Here's a breakdown of its components:
 
