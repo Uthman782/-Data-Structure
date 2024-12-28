@@ -30,7 +30,7 @@ class HashTable {
 			int index = hashFunction(key);
 			table[index].push_back(key);
 		}
-		
+
 		bool search(int key) {
 			int index = hashFunction(key);
 			for (const int& element : table[index]) {
@@ -58,41 +58,25 @@ class HashTable {
 };
 
 int main() {
-	cout<<"-> $ | Collision Resoled by open chaining | $ <-"<<endl;
-	char again='y';
-	while(again=='y') {
-		HashTable ht(10);
-		for(int i=0; i<10; i++) {
-			int val;
-			cout<<i<<")-> Enter value for hash: ";
-			cin>>val;
-			ht.insert(val);
-			cout << "Your Hash Table: " << endl;
-			ht.display();
-		}
-		int sea;
-		while(again=='y') {
-			cout<<"Search a value in hash: ";
-			cin>>sea;
-			cout << "Searching for "<<sea<<": ";
-			cout<<(ht.search(sea) ? "Found" : "Not Found") << endl;
-			cout<<"Search again [y/n]: ";
-			cin>>again;
-		}
-		again = 'y';
-		while(again=='y') {
-			cout<<"Remove Value: ";
-			cin>>sea;
-			cout << "\nRemoving "<<sea<<": " << endl;
-			ht.remove(sea);
-			cout << "\nHash Table after remove: " << endl;
-			ht.display();
-			cout<<"Remove again [y/n]: ";
-			cin>>again;
-		}
-		cout<<"Do you wnat it again [y/n]: ";
-		cin>>again;
-		system("CLS");
-	}
-	return 0;
+	HashTable ht(10);
+	ht.insert(15);
+	ht.insert(50);
+	ht.insert(11);
+	ht.insert(22);
+	ht.insert(34);
+	ht.insert(43);
+	ht.insert(56);
+	ht.insert(77);
+	ht.insert(79);
+	ht.insert(88);
+	cout << "Your Hash Table: " << endl;
+	ht.display();
+	cout << "Searching for 1: ";
+	cout<<(ht.search(1) ? "Found" : "Not Found") << endl;
+
+	cout << "\nRemoving 11: " << endl;
+	ht.remove(11);
+	cout << "\nHash Table after remove: " << endl;
+	ht.display();
+return 0;
 }
